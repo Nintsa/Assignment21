@@ -15,8 +15,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        btnBinding()
+        itemsBinding()
+
+    }
+
+    private fun itemsBinding(){
         binding.itemsRecycler.layoutManager = LinearLayoutManager(this)
         binding.itemsRecycler.adapter = ItemsRecycleAdapter(clothes = clothes)
+    }
+
+    private fun btnBinding(){
+
     }
 
 

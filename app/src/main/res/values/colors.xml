@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="eggshell">#EDF1FA</color>
     <color name="cadetgrey">#96A7AF</color>
+    <color name="green">#3ED598</color>
+    <color name="darkGrey">#30444E</color>
 </resources>
