@@ -1,4 +1,4 @@
-package com.example.assignment9
+package com.example.assignment9.data.model
 
 data class ItemInformation(
     val imageSource: Int,

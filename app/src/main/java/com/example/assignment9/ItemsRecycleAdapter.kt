@@ -3,6 +3,7 @@ package com.example.assignment9
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.assignment9.data.model.ItemInformation
 import com.example.assignment9.databinding.ItemRecyclerviewBinding
 
 class ItemsRecycleAdapter (private val clothes: MutableList<ItemInformation>) : RecyclerView.Adapter<ItemsRecycleAdapter.ItemsViewHolder>() {
