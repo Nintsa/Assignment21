@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.assignment9.CartViewModel
+import com.example.assignment9.MyApplication
 import com.example.assignment9.databinding.FragmentCartBinding
 import javax.inject.Inject
 
@@ -14,7 +15,7 @@ class CartFragment : BaseFragment() {
 
     private lateinit var binding: FragmentCartBinding
     private lateinit var viewModel: CartViewModel
-    private lateinit var adapter: CartRecycleAdapter
+    private lateinit var adapter: CartRecyclerAdapter
 
     @Inject
     lateinit var cartViewModel: CartViewModel
@@ -33,7 +34,7 @@ class CartFragment : BaseFragment() {
         (activity?.application as MyApplication).appComponent.inject(this)
 
         viewModel = ViewModelProvider(this).get(CartViewModel::class.java)
-        adapter = CartRecycleAdapter(viewModel.cartItems.value ?: emptyList()) { cartItem ->
+        adapter = CartRecyclerAdapter(viewModel.cartItems.value ?: emptyList()) { cartItem ->
             showCartItemDialog(cartItem)
         }
 

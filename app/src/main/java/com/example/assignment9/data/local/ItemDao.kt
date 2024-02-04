@@ -8,7 +8,7 @@ import com.example.assignment9.data.model.ItemInformation
 
 @Dao
 interface ItemDao {
-    @Query("SELECT * FROM iteminformation")
+    @Query("SELECT * FROM items")
     suspend fun getItems(): List<ItemInformation>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

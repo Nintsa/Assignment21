@@ -6,10 +6,14 @@ import com.example.assignment9.data.local.ItemDao
 import com.example.assignment9.data.local.ItemDatabase
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import javax.inject.Singleton
 
 @Module
-class DatabaseModule {
+@InstallIn(ApplicationComponent::class)
+object DatabaseModule {
+
     @Provides
     @Singleton
     fun provideItemDatabase(application: Application): ItemDatabase {

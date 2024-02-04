@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.assignment9.ItemViewModel
 import com.example.assignment9.ItemsRecycleAdapter
-import com.example.assignment9.R
 import com.example.assignment9.databinding.FragmentItemsBinding
 import com.example.assignment9.domain.usecase.GetItemsUseCase
 import javax.inject.Inject
@@ -37,7 +36,7 @@ class ItemsFragment : BaseFragment() {
         (activity?.application as MyApplication).appComponent.inject(this)
 
         viewModel = ViewModelProvider(this).get(ItemViewModel::class.java)
-        adapter = ItemsRecycleAdapter(viewModel.items.value ?: mutableListOf())
+        adapter = ItemsRecycleAdapter(emptyList()) // Pass an empty list initially
 
         binding.itemsRecycler.layoutManager = LinearLayoutManager(requireContext())
         binding.itemsRecycler.adapter = adapter
@@ -56,6 +55,7 @@ class ItemsFragment : BaseFragment() {
             viewModel.getItemsFromDatabase()
         }
     }
+
 
     private fun isNetworkAvailable(): Boolean {
         return true

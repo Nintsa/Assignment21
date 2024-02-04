@@ -5,12 +5,13 @@ import com.example.assignment9.ItemViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
+import dagger.multibindings.ClassKey
 
 @Module
 abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(ItemViewModel::class)
+    @ClassKey(ItemViewModel::class)
     abstract fun bindItemViewModel(viewModel: ItemViewModel): ViewModel
 }

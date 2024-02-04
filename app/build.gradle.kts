@@ -4,7 +4,6 @@ plugins {
     id("androidx.navigation.safeargs.kotlin")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
-    id("com.google.gms.google-services")
 }
 
 android {
@@ -93,6 +92,12 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.0.0")
     implementation("com.google.dagger:hilt-android:2.50")
     kapt("com.google.dagger:hilt-android-compiler:2.50")
+
+    implementation ("com.google.dagger:dagger-android-support:2.38.1")
+    kapt ("com.google.dagger:dagger-android-processor:2.38.1")
+    implementation ("com.google.dagger:hilt-android:2.50")
+    kapt ("com.google.dagger:hilt-android-compiler:2.50")
+    annotationProcessor ("com.google.dagger:dagger-android-processor:2.38.1")
 }
 
 kapt {
